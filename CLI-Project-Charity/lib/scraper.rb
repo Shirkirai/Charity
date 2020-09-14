@@ -18,17 +18,7 @@ class Scraper
       self.scrape_charity_index.each do |r|
         link = r.attr("href")
         link_name = r.text
+      end
+    end
 
-
-end
-
-def make_charity_sites
-  self.scrape_charity_index.each do |link|
-  end
-end
-
-
-things.each do |r|
-  detail = "#{r.text}; link: #{r.attr("href")}"
-  puts detail
 end
