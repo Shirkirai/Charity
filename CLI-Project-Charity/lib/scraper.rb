@@ -4,7 +4,7 @@ require 'nokogiri'
 require 'open-uri'
 require 'pry'
 
-class Scraper
+class Top10Charity::Scraper
 
     def get_page
         Nokogiri::HTML(open("https://www.charitynavigator.org/index.cfm?bay=topten"))
@@ -16,8 +16,10 @@ class Scraper
 
     def make_charity_sites
       self.scrape_charity_index.each do |r|
-        link = r.attr("href")
-        link_name = r.text
+        Top10Charity::Charities.new(r)
+        #note to self = research into "from_index_page" function...
+        #link = r.attr("href")
+        #link_name = r.text
       end
     end
 
